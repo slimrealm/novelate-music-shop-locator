@@ -2,6 +2,7 @@ Novelate music shop finder (might be changing name)
 
 Live site:  <URL>
 
+Deployment:  Automatic - FE to Netlify, BE to Vercel.
 
 Showcases Full stack development capabilities w/ React + Node (+DB?)
 

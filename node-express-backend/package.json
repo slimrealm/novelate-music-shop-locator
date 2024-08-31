@@ -1,0 +1,12 @@
+{
+  "name": "node-express-backend",
+  "version": "1.0.0",
+  "description": "novelate music app",
+  "main": "server.js",
+  "author": "Sam Miller",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

@@ -59,6 +59,11 @@ router.get('/shops', validateInput, (req, res) => {
     res.json(response); //TODO: replace line with above block
 });
 
+// Temporary!!!!
+router.get('/', (req, res) => {
+    res.json("Sanity check.  Working!!");
+});
+
 // GET shop details
 router.get('/shop', (req, res) => {
     const { shopId } = req.query;

@@ -13,9 +13,9 @@ const NOVELATE_API_KEY = process.env.REACT_APP_NOVELATE_API_KEY;
 
 export const fetchShops = createAsyncThunk('shopsList/fetchShops', async () => {
   // need to switch hard-coded coords to user's device location
-  const latitude = "29";
-  const longitude = "-95";
-  const maxRadius = "100";
+  const latitude = "39.7283";
+  const longitude = "-121.8380";
+  const maxRadius = "1000";
   const topNumRows = "10";
   try {
     ///////////////////////////////////////////////////////////////////////

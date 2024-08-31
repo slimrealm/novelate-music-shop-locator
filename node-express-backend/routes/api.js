@@ -39,24 +39,23 @@ function validateInput(req, res, next) {
 router.get('/shops', validateInput, (req, res) => {
     let { latitude, longitude, maxRadius, topNumRows } = req.query;
 
-    // latitude = parseFloat(latitude);
-    // longitude = parseFloat(longitude);
-    // maxRadius = parseFloat(maxRadius) || 1000;
-    // topNumRows = parseInt(topNumRows) || 20;
+    latitude = parseFloat(latitude);
+    longitude = parseFloat(longitude);
+    maxRadius = parseFloat(maxRadius) || 1000;
+    topNumRows = parseInt(topNumRows) || 20;
 
-    // const filteredShops = shopData.response.matches
-    //     .map(shop => {
-    //         const shopLat = shop.locations[0].address.latitude;
-    //         const shopLon = shop.locations[0].address.longitude;
-    //         const distance = calculateDistance(latitude, longitude, shopLat, shopLon);
-    //         return { ...shop, distance };
-    //     })
-    //     .filter(shop => shop.distance <= maxRadius)
-    //     .sort((a, b) => a.distance - b.distance)
-    //     .slice(0, topNumRows);
+    const filteredShops = shopData.response.matches
+        .map(shop => {
+            const shopLat = shop.locations[0].address.latitude;
+            const shopLon = shop.locations[0].address.longitude;
+            const distance = calculateDistance(latitude, longitude, shopLat, shopLon);
+            return { ...shop, distance };
+        })
+        .filter(shop => shop.distance <= maxRadius)
+        .sort((a, b) => a.distance - b.distance)
+        .slice(0, topNumRows);
 
-    // res.json({ response: { matches: filteredShops } });
-    res.json(response); //TODO: replace line with above block
+    res.json({ response: { matches: filteredShops } });
 });
 
 // Temporary!!!!

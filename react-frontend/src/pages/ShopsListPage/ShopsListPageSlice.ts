@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import sampleData from '../../zsample-api-response.json'  //TODO: Temp - delete when done
+//import sampleData from '../../zsample-api-response.json'  //TODO: Temp - delete when done
 
 interface ShopsListState {
   fetchedData: any;
@@ -19,18 +19,17 @@ export const fetchShops = createAsyncThunk('shopsList/fetchShops', async () => {
   const topNumRows = "10";
   try {
     ///////////////////////////////////////////////////////////////////////
-    // const response = await axios.get(
-    //   `${NOVELATE_BASE_URL}/api/v1/shops?latitude=${latitude}&longitude=${longitude}&maxRadius=${maxRadius}&topNumRows=${topNumRows}`,
-    //   {
-    //     headers: {
-    //       'x-novelate-api-key': NOVELATE_API_KEY,
-    //     },
-    //   },
-    // );
-    //
-    //     return response.data;
+    const response = await axios.get(
+      `${NOVELATE_BASE_URL}/api/v1/shops?latitude=${latitude}&longitude=${longitude}&maxRadius=${maxRadius}&topNumRows=${topNumRows}`,
+      {
+        headers: {
+          'x-novelate-api-key': NOVELATE_API_KEY,
+        },
+      },
+    );
+    return response.data;
     ////////////////////////////////////////////////////////////////////////
-    return sampleData;  //TODO: Replace this line with above section
+    // return sampleData;  //TODO: Replace this line with above section
   } catch (error) {
     console.error(error);
   }

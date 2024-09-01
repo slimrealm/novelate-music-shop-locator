@@ -13,14 +13,12 @@ type ShopRouteParams = {
 };
 
 export const pullDetailsData = (fetchedDetailsData: any): ShopDetails => {
-  if (!fetchedDetailsData.response) {
+  console.log('FDD', fetchedDetailsData);
+  if (!fetchedDetailsData) {
     return {} as ShopDetails;
   }
-  const response = fetchedDetailsData.response || {};
-  console.log('WWW', response.matches[0]);
-  // const { novelateId, wholeName, services, locations, photoUrl, starRatingAverage, starRatingCount, paymentOptions } = response;
-  const { novelateId, wholeName, services, locations, photoUrl, starRatingAverage, starRatingCount, paymentOptions } = response.matches[0]; // TODO: REPLACE WITH LINE ABOVE
-  console.log('strAvg', starRatingAverage);
+  const { novelateId, wholeName, services, locations, photoUrl, starRatingAverage, starRatingCount, paymentOptions } = fetchedDetailsData;
+  // const { novelateId, wholeName, services, locations, photoUrl, starRatingAverage, starRatingCount, paymentOptions } = response.matches[0]; // TODO: REPLACE WITH LINE ABOVE
   const shopDetails: ShopDetails = {
     novelateId: novelateId,
     name: wholeName,
@@ -32,24 +30,22 @@ export const pullDetailsData = (fetchedDetailsData: any): ShopDetails => {
     starRatingCount: starRatingCount,
     paymentOptions: paymentOptions,
   };
-  console.log('SD', shopDetails);
   return shopDetails;
 };
 
 const ShopDetailsPage: React.FC = () => {
   const { novelateId } = useParams<keyof ShopRouteParams>() as ShopRouteParams;
-
+  console.log('NID', novelateId);
   const dispatch: AppDispatch = useAppDispatch();
   const fetchedDetailsData: any = useSelector((state: RootState) => state.shopDetails.fetchedDetailsData);
+  console.log('FFD2', fetchedDetailsData);
   useEffect(() => {
     dispatch(fetchDetails(novelateId)); //TODO: change implementation so can use same data
   }, [dispatch, novelateId]);
 
   const detailsLoading: boolean = useSelector((state: RootState) => state.shopDetails.isLoading);
   const detailsError: string | null = useSelector((state: RootState) => state.shopDetails.error);
-  console.log('HERE');
   const shopDetails: ShopDetails = pullDetailsData(fetchedDetailsData || {});
-  // console.log('shopdetails', shopDetails);
   if (detailsLoading) return <div>Loading...</div>;
   if (detailsError) return <div>Error: {detailsError}</div>;
   return (

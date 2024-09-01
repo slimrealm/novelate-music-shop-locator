@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import sampleData from '../../zsample-api-response.json'  //TODO: Temp - delete when done
+//import sampleData from '../../zsample-api-response.json'  //TODO: Temp - delete when done
 
 interface ShopDetailsState {
   fetchedDetailsData: any;
@@ -12,17 +12,19 @@ const NOVELATE_BASE_URL = process.env.REACT_APP_NOVELATE_BASE_URL;
 const NOVELATE_API_KEY = process.env.REACT_APP_NOVELATE_API_KEY;
 
 export const fetchDetails = createAsyncThunk('shopDetails/fetchDetails', async (novelateId: string) => {
+  console.log('NID', novelateId);
   try {
-    ////////////////////////////////////////////////////////////////
-    // const response = await axios.get(`${NOVELATE_BASE_URL}/api/v1/emr-api/non-patient/shop?shopId=${novelateId}`, {
-    //   headers: {
-    //     'x-novelate-api-key': NOVELATE_API_KEY,
-    //   },
-    // });
-    // return response.data;
-    ///////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////
+    const response = await axios.get(`${NOVELATE_BASE_URL}/api/v1/shop?shopId=${novelateId}`, {
+      headers: {
+        'x-novelate-api-key': NOVELATE_API_KEY,
+      },
+    });
+    console.log('RD1', response.data);
+    return response.data;
+    /////////////////////////////////////////////////////////////////
 
-    return sampleData;  //TODO: Replace this line with above section
+    // return sampleData;  //TODO: Replace this line with above section
   } catch (error) {
     console.error(error);
   }

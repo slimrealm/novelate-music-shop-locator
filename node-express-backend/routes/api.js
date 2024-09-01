@@ -58,9 +58,8 @@ router.get('/shops', validateInput, (req, res) => {
     res.json({ response: { matches: filteredShops } });
 });
 
-// Temporary!!!!
 router.get('/', (req, res) => {
-    res.json("Sanity check.  Working!!");
+    res.json("Sanity check.  Working!");
 });
 
 // GET shop details

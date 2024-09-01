@@ -10,7 +10,7 @@ import {
   ShopImageWrapper,
 } from './ShopDetailsContent.styles';
 import { StyledImage } from '../../common/styled-components/StyledImage.styles';
-import fallbackImage from '../../images/hybrid.jpeg'; //TODO: ALL IMAGES -- make music person instead of doc -- shrink and make png
+import fallbackImage from '../../images/hybrid.jpeg'; //TODO: ALL IMAGES -- make music person -- shrink and make png
 import PaymentOptionsSection from '../PaymentOptionsSection/PaymentOptionsSection.component';
 import ReviewsInfo from '../ReviewsInfo/ReviewsInfo.component';
 import ShopDetailsLargeLineWithCommas from '../ShopDetailsLargeLineWithCommas/ShopDetailsLargeLineWithCommas.component';

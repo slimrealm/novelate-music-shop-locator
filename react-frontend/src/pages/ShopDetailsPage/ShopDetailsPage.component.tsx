@@ -13,18 +13,16 @@ type ShopRouteParams = {
 };
 
 export const pullDetailsData = (fetchedDetailsData: any): ShopDetails => {
-  console.log('FDD', fetchedDetailsData);
   if (!fetchedDetailsData) {
     return {} as ShopDetails;
   }
   const { novelateId, wholeName, services, locations, photoUrl, starRatingAverage, starRatingCount, paymentOptions } = fetchedDetailsData;
-  // const { novelateId, wholeName, services, locations, photoUrl, starRatingAverage, starRatingCount, paymentOptions } = response.matches[0]; // TODO: REPLACE WITH LINE ABOVE
   const shopDetails: ShopDetails = {
     novelateId: novelateId,
     name: wholeName,
     services: services,
-    address: locations[0].address as ShopAddress,
-    phoneNumber: locations[0].phone,
+    address: locations?.[0]?.address as ShopAddress,
+    phoneNumber: locations?.[0]?.phone,
     photoUrl: photoUrl,
     starRatingAverage: starRatingAverage,
     starRatingCount: starRatingCount,
@@ -35,12 +33,10 @@ export const pullDetailsData = (fetchedDetailsData: any): ShopDetails => {
 
 const ShopDetailsPage: React.FC = () => {
   const { novelateId } = useParams<keyof ShopRouteParams>() as ShopRouteParams;
-  console.log('NID', novelateId);
   const dispatch: AppDispatch = useAppDispatch();
   const fetchedDetailsData: any = useSelector((state: RootState) => state.shopDetails.fetchedDetailsData);
-  console.log('FFD2', fetchedDetailsData);
   useEffect(() => {
-    dispatch(fetchDetails(novelateId)); //TODO: change implementation so can use same data
+    dispatch(fetchDetails(novelateId));
   }, [dispatch, novelateId]);
 
   const detailsLoading: boolean = useSelector((state: RootState) => state.shopDetails.isLoading);

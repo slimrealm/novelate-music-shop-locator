@@ -18,11 +18,11 @@ export interface ShopSummary {
 export interface ShopDetails {
   novelateId: string;
   name: string;
-  services: string[]; //spec
+  services: string[];
   address: ShopAddress;
   phoneNumber: string;
   photoUrl: string;
   starRatingAverage: number;
   starRatingCount: number;
-  paymentOptions: string[]; // insur
+  paymentOptions: string[];
 }

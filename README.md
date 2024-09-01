@@ -1,25 +1,19 @@
-Novelate music shop finder (might be changing name)
+Novelate music shop finder
 
-Live site:  <URL>
+Finds music shops based on coordinates - displays a list of services each shop provides - sell gear, teach lessons, instrument repair, etc.
 
-Deployment:  Automatic - FE to Netlify, BE to Render.
+Demonstrates full stack development skills: React + TypeScript + Redux Toolkit + NodeJS + ExpressJS
 
-Showcases Full stack development capabilities w/ React + Node (+DB?)
+Rest API: FE makes API calls to BE
 
-finds shops based on coordinates - tells you what their services are - sell equip, give lessons, instrument repair, etc.
+BE provides relevant shops within given radius of location, then provides details when individual shop clicked
 
-Frontend is React | TS | Redux w/ RTK | Styled Components
+Provides details, including photo of (AI-generated) music shop owner
 
-Backend Node + Express
+Responsive design, looks good at all sizes down to 370px wide
 
-Rest API -- FE makes API call with .........
+BE does query param validation and returns appropriate message + status if there's an invalid param.
 
-BE provides relevant shops within radius, or details when click on shop for details
+Deployment:  BE currently deploying to Render, FE to be deployed soon
 
-Provides details, incl. photo of shop owner / point of contact.
-
-Responsive design, looks good at all sizes, only getting iffy at <pixel size>
-
-BE does query param validation returns appropriate message + status.
-
-Currently storing data on BE server (no database).  Add DB ASAP.
+No DB integrated yet.  Temp data currently stored in Node app: node-express-backend/shopData.json

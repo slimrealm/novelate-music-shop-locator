@@ -12,13 +12,13 @@
                     {
                         "phone": "530-680-6543",
                         "address": {
-                            "line1": "1111 Sop lane",
-                            "line2": "Ste 12",
-                            "city": "Bremerhaven",
+                            "line1": "1111 Soap Lane",
+                            "line2": "Suite 12",
+                            "city": "Doyle",
                             "state": "CA",
-                            "zip": "55332",
-                            "latitude": 40,
-                            "longitude": -120
+                            "zip": "96109",
+                            "latitude": 40.0272,
+                            "longitude": -120.1041
                         }
                     }
                 ],
@@ -27,34 +27,34 @@
                 "starRatingCount": 287,
                 "paymentOptions": [
                     "Cash",
-                    "Venmo",
-                    "Card"
+                    "Card",
+                    "Venmo"
                 ]
             },
             {
                 "novelateId": "199",
-                "wholeName": "Qwerty Music",
+                "wholeName": "On Point Music",
                 "services": [
                     "guitar lessons",
-                    "equipment for sale",
-                    "circle time"
+                    "quality equipment for sale",
+                    "open jam sessions"
                 ],
                 "locations": [
                     {
                         "phone": "530-445-1032",
                         "address": {
-                            "line1": "456 KindaLikeATrucker Blvd.",
-                            "city": "Lancaster",
-                            "state": "PA",
-                            "zip": "17601",
-                            "latitude": 40,
-                            "longitude": -120
+                            "line1": "456 TheAudacity Blvd.",
+                            "city": "Reno",
+                            "state": "NV",
+                            "zip": "89433",
+                            "latitude": 39.5299,
+                            "longitude": -119.8143
                         }
                     }
                 ],
                 "photoUrl": "https://my-server.onrender.com/",
-                "starRatingAverage": 3.9,
-                "starRatingCount": 102,
+                "starRatingAverage": 4.8,
+                "starRatingCount": 1202,
                 "paymentOptions": [
                     "Cash",
                     "Card",

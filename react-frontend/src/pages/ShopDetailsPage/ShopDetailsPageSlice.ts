@@ -7,8 +7,8 @@ interface ShopDetailsState {
   error: string | null;
 }
 
-const NOVELATE_BASE_URL = process.env.REACT_APP_NOVELATE_BASE_URL;
-const NOVELATE_API_KEY = process.env.REACT_APP_NOVELATE_API_KEY;
+const NOVELATE_BASE_URL = import.meta.env.VITE_NOVELATE_BASE_URL;
+const NOVELATE_API_KEY = import.meta.env.VITE_NOVELATE_API_KEY;
 
 export const fetchDetails = createAsyncThunk('shopDetails/fetchDetails', async (novelateId: string) => {
   try {

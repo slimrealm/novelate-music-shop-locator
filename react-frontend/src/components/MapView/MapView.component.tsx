@@ -9,7 +9,7 @@ interface MapViewProps {
 }
 
 const MapView: React.FC<MapViewProps> = ({ coords, width, height }) => {
-    const MAPS_API_KEY = process.env.REACT_APP_MAPS_API_KEY;
+    const MAPS_API_KEY = import.meta.env.VITE_MAPS_API_KEY;
     const position: google.maps.LatLngLiteral = {
         lat: coords.latitude,
         lng: coords.longitude

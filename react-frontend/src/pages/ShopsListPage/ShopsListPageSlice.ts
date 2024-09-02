@@ -7,8 +7,8 @@ interface ShopsListState {
   error: string | null;
 }
 
-const NOVELATE_BASE_URL = process.env.REACT_APP_NOVELATE_BASE_URL;
-const NOVELATE_API_KEY = process.env.REACT_APP_NOVELATE_API_KEY;
+const NOVELATE_BASE_URL = import.meta.env.VITE_NOVELATE_BASE_URL;
+const NOVELATE_API_KEY = import.meta.env.VITE_NOVELATE_API_KEY;
 
 export const fetchShops = createAsyncThunk('shopsList/fetchShops', async () => {
   // need to switch hard-coded coords to user's device location

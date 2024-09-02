@@ -21,7 +21,6 @@ const pullSummaryData = (fetchedData: any): ShopSummary[] => {
 const ShopsList: React.FC = () => {
   const fetchedData: any = useSelector((state: RootState) => state.shopsList.fetchedData);
   const shopSummaries: ShopSummary[] = pullSummaryData(fetchedData);
-
   // const latitude = 29;
   // const longitude = -95;
   const coords: Coords = {

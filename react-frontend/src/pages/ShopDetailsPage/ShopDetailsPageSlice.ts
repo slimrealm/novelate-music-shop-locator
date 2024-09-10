@@ -13,7 +13,6 @@ const NOVELATE_API_KEY = import.meta.env.VITE_NOVELATE_API_KEY;
 export const fetchDetails = createAsyncThunk('shopDetails/fetchDetails', async (novelateId: string) => {
   try {
     const response = await axios.get(`${NOVELATE_BASE_URL}/api/v1/shop?shopId=${novelateId}`, {
-      // const response = await axios.get(`http://localhost:3000/api/v1/shop?shopId=${novelateId}`, {
       // headers: {
       //   'x-novelate-api-key': NOVELATE_API_KEY,
       // },

@@ -1,39 +1,13 @@
-const express = require('express');
+import express from 'express';
+import shopData from '../shopData.json' assert { type: 'json' };
+import { calculateDistance, validateInput } from '../helpers.js';
+
 const router = express.Router();
-const shopData = require('../shopData.json');
 
-// Helper function to calculate distance
-function calculateDistance(lat1, lon1, lat2, lon2) {
-    const R = 3963; // Earth's radius in miles
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLon = (lon2 - lon1) * Math.PI / 180;
-    const a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
-}
+router.get('/', (req, res) => {
+    res.json("Sanity check.  Working!");
+});
 
-// Input validation middleware
-function validateInput(req, res, next) {
-    const { latitude, longitude, maxRadius, topNumRows } = req.query;
-
-    if (latitude && (isNaN(latitude) || latitude < -90 || latitude > 90)) {
-        return res.status(400).json({ success: false, message: "Invalid latitude parameter" });
-    }
-    if (longitude && (isNaN(longitude) || longitude < -180 || longitude > 180)) {
-        return res.status(400).json({ success: false, message: "Invalid longitude parameter" });
-    }
-    if (maxRadius && (isNaN(maxRadius) || maxRadius <= 0 || maxRadius > 1000)) {
-        return res.status(400).json({ success: false, message: "Invalid maxRadius parameter" });
-    }
-    if (topNumRows && (isNaN(topNumRows) || topNumRows <= 0 || topNumRows > 300)) {
-        return res.status(400).json({ success: false, message: "Invalid topNumRows parameter" });
-    }
-
-    next();
-}
 
 // GET shops
 router.get('/shops', validateInput, (req, res) => {
@@ -58,10 +32,6 @@ router.get('/shops', validateInput, (req, res) => {
     res.json({ response: { matches: filteredShops } });
 });
 
-router.get('/', (req, res) => {
-    res.json("Sanity check.  Working!");
-});
-
 // GET shop details
 router.get('/shop', (req, res) => {
     const { shopId } = req.query;
@@ -70,8 +40,8 @@ router.get('/shop', (req, res) => {
         return res.status(400).json({ success: false, message: "Invalid shopId parameter" });
     }
 
+    // Find matching data for shopId
     const shop = shopData.response.matches.find(s => s.novelateId === shopId);
-
     if (!shop) {
         return res.status(404).json({ success: false, message: "Shop not found" });
     }
@@ -79,4 +49,4 @@ router.get('/shop', (req, res) => {
     res.json(shop);
 });
 
-module.exports = router;
+export default router;

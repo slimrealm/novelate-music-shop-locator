@@ -4,6 +4,7 @@
             {
                 "novelateId": "134",
                 "wholeName": "Bob's Woodwinds",
+                "owner": "alex",
                 "services": [
                     "clarinet lessons",
                     "instrument repair"
@@ -22,7 +23,7 @@
                         }
                     }
                 ],
-                "photoUrl": "https://my-server.onrender.com/",
+                "photoUrl": "https://novelate-images.s3.us-west-1.amazonaws.com/shop-owners/alex.jpeg",
                 "starRatingAverage": 4.6,
                 "starRatingCount": 287,
                 "paymentOptions": [
@@ -34,6 +35,7 @@
             {
                 "novelateId": "199",
                 "wholeName": "On Point Music",
+                "owner": "jen",
                 "services": [
                     "guitar lessons",
                     "quality equipment for sale",
@@ -52,7 +54,7 @@
                         }
                     }
                 ],
-                "photoUrl": "https://my-server.onrender.com/",
+                "photoUrl": "https://novelate-images.s3.us-west-1.amazonaws.com/shop-owners/jen.jpeg",
                 "starRatingAverage": 4.8,
                 "starRatingCount": 1202,
                 "paymentOptions": [

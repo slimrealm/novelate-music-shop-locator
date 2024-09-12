@@ -66,6 +66,72 @@
                     "BTC",
                     "ETH"
                 ]
+            },
+            {
+                "novelateId": "1078",
+                "wholeName": "Cob's Woodwinds",
+                "owner": "alex",
+                "services": [
+                    "clarinet lessons",
+                    "instrument repair"
+                ],
+                "locations": [
+                    {
+                        "phone": "530-680-6543",
+                        "address": {
+                            "line1": "1111 Soap Lane",
+                            "line2": "Suite 12",
+                            "city": "Doyle",
+                            "state": "CA",
+                            "zip": "96109",
+                            "latitude": 40.0272,
+                            "longitude": -120.1041
+                        }
+                    }
+                ],
+                "photoUrl": "https://novelate-images.s3.us-west-1.amazonaws.com/shop-owners/alex.jpeg",
+                "starRatingAverage": 4.6,
+                "starRatingCount": 287,
+                "paymentOptions": [
+                    "Cash",
+                    "Card",
+                    "Venmo"
+                ]
+            },
+            {
+                "novelateId": "16",
+                "wholeName": "Off Point Music",
+                "owner": "jen",
+                "services": [
+                    "guitar lessons",
+                    "quality equipment for sale",
+                    "open jam sessions"
+                ],
+                "locations": [
+                    {
+                        "phone": "530-445-1032",
+                        "address": {
+                            "line1": "456 TheAudacity Blvd.",
+                            "city": "Reno",
+                            "state": "NV",
+                            "zip": "89433",
+                            "latitude": 39.5299,
+                            "longitude": -119.8143
+                        }
+                    }
+                ],
+                "photoUrl": "https://novelate-images.s3.us-west-1.amazonaws.com/shop-owners/jen.jpeg",
+                "starRatingAverage": 4.8,
+                "starRatingCount": 1202,
+                "paymentOptions": [
+                    "Cash",
+                    "Card",
+                    "Venmo",
+                    "PayPal",
+                    "SOL",
+                    "BTC",
+                    "ETH"
+                ]
             }
         ]
     }

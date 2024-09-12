@@ -8,7 +8,8 @@ export const ShopDetailsContentContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   max-width: 900px;
-  background-color: #f1f9f7;
+  background-color: #000000;
+  color: #ddddff;
 `;
 
 export const ShopDetailsMainSection = styled.div`

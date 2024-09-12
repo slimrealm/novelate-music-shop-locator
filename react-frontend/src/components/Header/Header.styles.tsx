@@ -8,6 +8,6 @@ export const HeaderContainer = styled.div`
   align-items: center;
   font-size: 2em;
   font-weight: 500;
-  color: #ffffff;
-  background-color: #3a7d6f;
+  color: #ddddff;
+  background: linear-gradient(to bottom, #200C30, #581F82);
 `;

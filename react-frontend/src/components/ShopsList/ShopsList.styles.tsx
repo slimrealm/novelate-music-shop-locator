@@ -5,7 +5,7 @@ export const ShopsListContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #f1f9f7;
+  background-color: #000000;
 `;
